@@ -1,0 +1,27 @@
+<section id="upload-section">
+    <input type="file" class="file-input" (change)="onFileSelected($event)" accept="image/png, image/gif, image/jpeg"
+        #fileUpload>
+
+
+    <div class="file-upload">
+        <h1>Welcome to the challenge</h1>
+
+        <h2>
+            {{fileName || "No file uploaded yet."}}
+        </h2>
+
+        <button class="upload-btn" (click)="fileUpload.click()">
+            <fa-icon [icon]="uploadIcon"></fa-icon>
+        </button>
+
+        <h2 *ngIf="fileName.length>0 && !fileUploaded">
+            Uploading file...this can take some time
+        </h2>
+        <h2 *ngIf="fileUploaded && fileUploadWorked">
+            File is uploaded. Go to Home and fulfill your mission!
+        </h2>
+        <h2 *ngIf="fileUploaded && !fileUploadWorked">
+            Something went wrong, reload the page and try again!
+        </h2>
+    </div>
+</section>

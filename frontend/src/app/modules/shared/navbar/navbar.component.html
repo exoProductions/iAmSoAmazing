@@ -1,0 +1,32 @@
+<div [ngClass]="getShowNav() ? 'main-container' : 'main-container hide'">
+    <ul class="main-list">
+        <li>
+          <ul id="pages-list">
+            <ng-container *ngFor="let page of getPages(); let i = index">
+              <li *ngIf="i < getPages().length" [ngClass]="page==getCurrentPage() ? 'item active' : 'item'" (click)="navigateToPage(i)">
+                  <h1 class="icon">
+                    <fa-icon [icon]="pagesIcons[i]"></fa-icon>
+                  </h1>
+                  <h1 class="page-title">{{page}}</h1>
+              </li>
+            </ng-container>
+          </ul>
+        </li>
+        <li>
+          <div id="logo-container" *ngIf="getIsLargerThan1200()">
+            <img src="./assets/imgs/logos/logo-alpha2.png"/>
+          </div>
+        </li>
+        <li>
+          <ul id="social-list" *ngIf="getIsLargerThan1200()">
+            <ng-container *ngFor="let socialIcon of socialIcons; let i = index">
+              <li class="item" (click)="openTab(socialLinks[i])">
+                  <h1 class="social-icon"><fa-icon [icon]="socialIcon"></fa-icon></h1>
+                  <h1>{{socialTitles[i]}}</h1>
+              </li>
+            </ng-container>
+          </ul>
+        </li>
+      </ul>
+</div>
+

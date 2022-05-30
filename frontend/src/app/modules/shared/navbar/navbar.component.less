@@ -1,0 +1,117 @@
+@import (reference) "../../../shared/variables.less";
+
+.main-container {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 3;
+  //transition: top 1s;
+  width: 100%;
+}
+
+.main-container.hide {
+  top: calc(-1 * @navbar-height);
+}
+
+.main-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: @navbar-height;
+  width: 100%;
+  background-color: @color-bg;
+}
+
+.main-list:hover {
+  cursor: default;
+}
+
+#logo-container {
+ // width: @navbar-height;
+ width: calc(@navbar-height);
+  max-height: @navbar-height;
+}
+
+#logo-container img {
+  max-width: 100%;
+}
+
+
+#pages-list,
+#social-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: @navbar-height;
+  min-width: 40vw;
+}
+
+#social-list {
+  justify-content: flex-end;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 @margin-small;
+  height: 100%;
+}
+
+.item:hover h1,
+.item.active h1 {
+  color: @color-accent1;
+}
+
+.item h1 {
+  font-size: @fontsize-std;
+  color: white;
+  padding: 0 @padding-smaller;
+}
+
+.item h1:nth-child(2) {
+  border-left: solid 1px white;
+}
+
+.item:hover h1:nth-child(2),
+.item.active h1:nth-child(2) {
+  border-left: solid 1px @color-accent1;
+}
+
+@media screen and(max-width:@max-w-1) {
+    .item h1:first-child {
+        margin: 0px;
+        font-size: @fontsize-h1;
+      }
+    .page-title{
+        display: none;
+    }
+}
+
+@media screen and(max-width:@max-w-2) {
+  .main-list {
+    justify-content: center;
+  }
+  #pages-list{
+      width: 100vw;
+      justify-content: space-between;
+  }
+  .item {
+    flex-direction: column;
+    margin: 0px;
+    width: 100%;
+  }
+
+  .item h1:nth-child(2) {
+    margin-top: @margin-smaller;
+  }
+
+  .item h1:nth-child(2),
+  .item:hover h1:nth-child(2),
+  .item.active h1:nth-child(2) {
+    border-left: none;
+  }
+}
