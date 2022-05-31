@@ -1,3 +1,4 @@
+@import "./app/shared/variables.less";
 html,
 body {
   margin: 0px;
@@ -71,12 +72,14 @@ textarea {
   font-size: 14px;
   text-align: center;
   text-transform: uppercase;
+  color: white;
 }
 .title-second {
   font-family: 'Arial', Sans-serif;
   font-weight: 900;
-  font-size: 50px;
+  font-size: 30px;
   text-align: center;
+  color: white;
 }
 .subtitle-second {
   font-family: 'Arial', Sans-serif;
@@ -100,9 +103,10 @@ textarea {
   border-radius: 40px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09);
   color: white;
-  background-color: #40a78d;
-  transition: background-color 0.5s;
+  background-color:@color-accent1;
+  transform: scale(1);
+  transition: 0.5s transform;
 }
 .round-button:hover {
-  background-color: #ddc7b0;
+transform: scale(1.05);
 }

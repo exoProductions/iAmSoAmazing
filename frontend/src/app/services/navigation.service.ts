@@ -40,12 +40,13 @@ export class NavigationService {
 }
 
   navbarOnScrollEvent(scrlH:number):void{
-    this.scrollHeight=scrlH;
+    /*this.scrollHeight=scrlH;
     this.showNav=this.prevScrollHeight>=scrlH;
     
     this.scrollIsHigherThan100vh=scrlH>window.innerHeight-100;
 
     this.prevScrollHeight=scrlH;
+    */
   } 
 
   onSizeChange(windowSize:number):void{

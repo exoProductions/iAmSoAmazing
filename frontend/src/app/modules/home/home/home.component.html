@@ -1,5 +1,55 @@
 <section id="home-section">
-<div class="img-container" *ngIf="reloadImg">
-    <img src="{{getFileName()}}" alt="victim" />
-</div>
+    <div class="img-container" *ngIf="reloadImg">
+        <img src="{{getFileName()}}" alt="victim" />
+        <h1>Ich & mein Lieblingsort</h1>
+    </div>
+    <div id="first-intro">
+        <h1 class="title-first">Ich habe alles erlebt</h1>
+        <h1 class="title-second">Meine Biografie</h1>
+
+        <h3 class="first-intro-text">Bereits als ich zum ersten mal den 11ten Platz beim Event 'Die schönste Seetaler Kuh'
+            gewonnen habe wusste ich, dass ich zu grossem berufen war.
+            <br><br>
+            Und tatsächlich, ein Monat später, im zarten Alter von 16 Jahren zeugte ich meine drei Stiefsöhne Jesus &
+            Ueli, wobei letzterer sich später durch geschicktes Heiraten den Nachnamen Maurer ergatterte.
+        </h3>
+    </div>
+    <div id="live-stations">
+        <h1 class="title-first">Die wichtigsten</h1>
+        <h1 class="title-second">#3 Stationen</h1>
+
+        <ul id="stations-list">
+            <ng-container *ngFor="let img of imgs;let i = index">
+                <li>
+                    <div class="stations-img-container">
+                        <img src="./assets/imgs/home/stations/{{img}}" />
+                        <div class="text-container">
+                            <h1 class="title-second">
+                                {{titles[i]}}
+                            </h1>
+                            <h1 class="title-first">
+                                {{texts[i]}}
+                            </h1>
+                        </div>
+                        <button><h1 class="more">Mehr <fa-icon [icon]="moreIcon"></fa-icon>
+                        </h1></button>
+                    </div>
+                </li>
+            </ng-container>
+        </ul>
+    </div>
+
+    <section id="donate-section">
+        <h1 class="title-first">Spende</h1>
+        <h1 class="title-second">1000'000</h1>
+        <button (click)="donate()" class="round-button">
+            <h1>
+                Jetzt spenden!
+            </h1>
+        </button>
+        <span class="first-intro-text">Es wird sich für dich lohnen! Mit diner Spende unterstützt du nicht nur meinen
+            abgehobenen Lifestyle, sondern auch das Überleben der byzantinischen Hölenlaus.</span>
+
+    </section>
+
 </section>
