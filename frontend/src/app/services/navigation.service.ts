@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class NavigationService {
-  pages:string[]=["Home","Upload"];
+  pages:string[]=["home","upload"];
   currentPage=this.pages[0];
   showNav:boolean=true;
   isWiderThan1200:boolean=true;
