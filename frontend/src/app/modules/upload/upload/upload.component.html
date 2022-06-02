@@ -19,9 +19,15 @@
         </h2>
         <h2 *ngIf="fileUploaded && fileUploadWorked">
             File is uploaded. Go to Home and fulfill your mission!
+            <br><br>
+            <button class="home-btn" (click)="goHome()">
+                <h1>Home</h1>
+            </button>
         </h2>
         <h2 *ngIf="fileUploaded && !fileUploadWorked">
             Something went wrong, reload the page and try again!
         </h2>
+
+        
     </div>
 </section>

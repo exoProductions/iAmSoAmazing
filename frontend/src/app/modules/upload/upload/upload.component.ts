@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faUpload } from '@fortawesome/free-solid-svg-icons';
 import { ApiService } from 'src/app/services/api.service';
 import { NavigationService } from 'src/app/services/navigation.service';
@@ -19,13 +20,16 @@ export class UploadComponent implements OnInit {
   fileUploadWorked: boolean = false;
   fileUploaded: boolean = false;
 
-  constructor(private http: HttpClient, private apiService: ApiService, private navigationService: NavigationService) {
+  constructor(private http: HttpClient, private apiService: ApiService, private navigationService: NavigationService,private router:Router) {
   }
 
   ngOnInit(): void {
     this.navigationService.currentPage = this.navigationService.pages[1];
   }
 
+  goHome():void{
+    this.router.navigate(["./home"]);
+  }
 
   onFileSelected(event: any) {
 

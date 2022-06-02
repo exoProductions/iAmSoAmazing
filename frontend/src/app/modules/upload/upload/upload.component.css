@@ -43,3 +43,11 @@
 .upload-btn:hover {
   transform: scale(1.1);
 }
+.home-btn {
+  background-color: #00c3ff;
+  color: white;
+  border-radius: 50px;
+}
+.home-btn h1 {
+  color: white;
+}
